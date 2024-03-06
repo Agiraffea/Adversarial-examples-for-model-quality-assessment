@@ -51,8 +51,8 @@ If you want to test SAR dataset, please change the path below.
 
 Adversarial method  | Original image | Altered image
 ------------- | ------------- | -------------
-Add cloud  | picture | picture1
-Add blur  | picture | picture1
+Add cloud  | ![](https://github.com/Agiraffea/model_test_program/blob/main/result%20example/optical%20result/cloud/golfcourse.12.png) | ![](https://github.com/Agiraffea/model_test_program/blob/main/result%20example/optical%20result/cloud/img1_true_golfcourse_pred_tenniscourt.png)
+Add blur  | ![](https://github.com/Agiraffea/model_test_program/blob/main/result%20example/optical%20result/blur/tenniscourt.11.png) | ![](https://github.com/Agiraffea/model_test_program/blob/main/result%20example/optical%20result/blur/img1_true_tenniscourt_pred_baseballdiamond.png)
 
 
 
