@@ -1,9 +1,5 @@
 # Model_Test_Program
-   Our project can be used to evaluate the reliability of image classification models. We generate adversarial samples by adding cloud layers and Gaussian blur to visible light images. For SAR images, we introduce high-scattering noise points in the background area and modify pixel blocks in the object area to generate adversarial samples. By introducing these interferences, we can assess the robustness of the models.
- 
-tags: `adversarial attack`,`SAR`,
- 
-code: `python`
+   Our project can be used to evaluate the reliability of image classification models. We generate adversarial samples by adding cloud layers and Gaussian blur to visible light images. For SAR images, we introduce high-scattering noise points in the background area and modify pixel patch in the object area to generate adversarial samples. By introducing these interferences, we can assess the robustness of the models.
  
 ---
 ## How to use our code
@@ -47,12 +43,40 @@ If you want to test SAR dataset, please change the path below.
 ```
 ---
 ### Generate adversarial samples you want
-#### Alterations to optical remote sensing images.
+#### Alterations to optical remote sensing images
 
 Adversarial method  | Original image | Altered image
-------------- | ------------- | -------------
+:-------------: | ------------- | -------------
 Add cloud  | ![](https://github.com/Agiraffea/model_test_program/blob/main/result%20example/optical%20result/cloud/golfcourse.12.png) | ![](https://github.com/Agiraffea/model_test_program/blob/main/result%20example/optical%20result/cloud/img1_true_golfcourse_pred_tenniscourt.png)
 Add blur  | ![](https://github.com/Agiraffea/model_test_program/blob/main/result%20example/optical%20result/blur/tenniscourt.11.png) | ![](https://github.com/Agiraffea/model_test_program/blob/main/result%20example/optical%20result/blur/img1_true_tenniscourt_pred_baseballdiamond.png)
 
+It is preferable that the images in your dataset have a size of 256 px × 256 px.
+Here is the demonstration of the attack process.
+```
+----------The NO.1 image attack succeeded----------
+Success Rate: 100.00% (1/1)
+.
+.
+.
+----------The NO.89 image attack failed----------
+Success Rate: 32.58% (29/89)
+----------The NO.90 image attack failed----------
+Success Rate: 32.22% (29/90)
+For [untargeted attack] on [ResNet18] network model, the final success rate is: 32.22%
+```
+The success rate of the attack is 32.22%, and the model precision is 67.78%.
+Here is the result line chart.
+![](https://github.com/Agiraffea/model_test_program/blob/main/result%20example/result%20picture_optic.png)
+
+#### Alterations to SAR images
+
+Adversarial method  | Original image | Altered image
+:-------------: | ------------- | -------------
+High-scattering points  | ![](https://github.com/Agiraffea/model_test_program/blob/main/result%20example/SAR%20result/point%20attack/HB14932.jpeg) | ![](https://github.com/Agiraffea/model_test_program/blob/main/result%20example/SAR%20result/point%20attack/HB14932_1.jpeg)
+Add pixel patch  | ![](https://github.com/Agiraffea/model_test_program/blob/main/result%20example/SAR%20result/patch%20attack/HB14941.jpeg) | ![](https://github.com/Agiraffea/model_test_program/blob/main/result%20example/SAR%20result/patch%20attack/HB14941_1.jpg)
+
+It is preferable that the images in your dataset have a size of 128 px × 128 px.
+Here is the result chart.
+![](https://github.com/Agiraffea/model_test_program/blob/main/result%20example/result%20picture_SAR.png)
 
 
