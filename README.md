@@ -12,8 +12,8 @@ After downloading our code, you simply need to open the following file to use it
 
 In this section, you can input the path of the model and the data you want to test into the code.
 ```python
-    dataloder_test_path = 'adversarial_attack_for_optical/dataset/test'
-    model_path_for_optic = 'adversarial_attack_for_optical/checkpoint/ResNet18.pth'
+dataloder_test_path = 'adversarial_attack_for_optical/dataset/test'
+model_path_for_optic = 'adversarial_attack_for_optical/checkpoint/ResNet18.pth'
 ```
 Dataloder_test_path is the path of the dataset you want to test.
 Model_path_for_optic is the path of the model you want to test.
@@ -21,25 +21,25 @@ Model_path_for_optic is the path of the model you want to test.
 ---
 If you need to preprocess your model and dataset, you can perform the following steps. If no preprocessing is required, please proceed to the next section.
 ```python
-    model = torch.load('adversarial_attack_for_optical/checkpoint/ResNet18.pth')
-    model = model['net']
-    model_SAR = MobileNetV2()
-    model_SAR.load_state_dict(torch.load("adversarial_attack_for_SAR/point_attack/MSTAR_MobileNetV2_0709.model"))
+model = torch.load('adversarial_attack_for_optical/checkpoint/ResNet18.pth')
+model = model['net']
+model_SAR = MobileNetV2()
+model_SAR.load_state_dict(torch.load("adversarial_attack_for_SAR/point_attack/MSTAR_MobileNetV2_0709.model"))
 ```    
     
 You can load your model parameters or perform other operations in the module as shown in the example above.
 ```python
-    transform = transforms.Compose([
-       transforms.ToTensor(),
-       transforms.Resize((256, 256)),
-       transforms.Normalize((0.4842, 0.4901, 0.4505), (0.1735, 0.1635, 0.1555))
-    ])
+transform = transforms.Compose([
+   transforms.ToTensor(),
+   transforms.Resize((256, 256)),
+   transforms.Normalize((0.4842, 0.4901, 0.4505), (0.1735, 0.1635, 0.1555))
+])
 ```
 You can preprocess your dataset as shown in the example above.
 
 If you want to test SAR dataset, please change the path below.
 ```python
-    test_data_dir = 'adversarial_attack_for_SAR/sticker_attack/test128'
+test_data_dir = 'adversarial_attack_for_SAR/sticker_attack/test128'
 ```
 ---
 ### Generate adversarial samples you want
