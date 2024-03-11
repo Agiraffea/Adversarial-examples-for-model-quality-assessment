@@ -8,6 +8,11 @@ After downloading our code, you simply need to open the following file to use it
 
     main.py
 
+
+Or you can install with `pip`.
+```python
+pip install soimt
+```
 ### Load your model and dataset
 
 In this section, you can input the path of the model and the data you want to test into the code.
