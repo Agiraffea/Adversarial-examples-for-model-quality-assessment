@@ -1,3 +1,4 @@
+![image](https://github.com/Agiraffea/model_test_program/blob/main/6cf154166a758891fe8e70064c6269a.png)
 # Model_Test_Program
    Our program can be used to evaluate the reliability of image classification models. We generate adversarial samples by adding cloud layers and Gaussian blur to visible light images. For SAR images, we introduce high-scattering noise points in the background area and modify pixel patch in the object area to generate adversarial samples. By introducing these interferences, we can assess the robustness of the models.
  
